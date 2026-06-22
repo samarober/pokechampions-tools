@@ -54,6 +54,7 @@ cd backend
 ./mvnw spring-boot:run
 \`\`\`
 * Swagger UI disponible en: `http://localhost:8080/swagger-ui/index.html`
+- Para probar los endpoints, utilizar **Postman** apuntando a `http://localhost:8080`.
 
 **3. Frontend (UI)**
 \`\`\`bash
@@ -64,3 +65,7 @@ npm run dev
 
 ## 📌 Estado del Proyecto
 *Consulta el archivo [STATE.md](./backend/STATE.md) para ver el progreso detallado de las fases de desarrollo.*
+- **Core:** Operativo (Spring Boot 4 + Java 21).
+- **Persistencia:** PostgreSQL configurado con Flyway.
+- **API:** Endpoint `/api/v1/pokemon` funcional y testeado con Postman.
+- **Documentación:** API documentada vía código (en desarrollo).

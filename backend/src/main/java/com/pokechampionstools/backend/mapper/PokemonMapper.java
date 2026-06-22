@@ -1,13 +1,15 @@
 package com.pokechampionstools.backend.mapper;
 
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
 import com.pokechampionstools.backend.domain.dto.PokemonActiveDto;
 import com.pokechampionstools.backend.domain.entity.PokemonActive;
-import org.mapstruct.Mapper;
 
-// componentModel = "spring" le dice a MapStruct que convierta este mapper en un @Component de Spring
-@Mapper(componentModel = "spring")
+@Mapper
 public interface PokemonMapper {
+    
+    PokemonMapper INSTANCE = Mappers.getMapper(PokemonMapper.class);
 
-    // MapStruct autogenerará el código de este método al compilar
     PokemonActiveDto toDto(PokemonActive entity);
 }
