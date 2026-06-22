@@ -1,15 +1,19 @@
 package com.pokechampionstools.backend.repository;
 
-import com.pokechampionstools.backend.domain.entity.PokemonActive;
-import org.springframework.data.repository.Repository;
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.Repository;
+
+import com.pokechampionstools.backend.domain.entity.PokemonActive;
 
 @org.springframework.stereotype.Repository
 public interface PokemonActiveRepository extends Repository<PokemonActive, Integer> {
     
-    // Spring Data genera la query SQL automáticamente por el nombre del método
-    List<PokemonActive> findAll();
+    // Cambiamos List por Page, y le pasamos el objeto Pageable
+    Page<PokemonActive> findAll(Pageable pageable);
     
     Optional<PokemonActive> findById(Integer pokedexNumber);
     

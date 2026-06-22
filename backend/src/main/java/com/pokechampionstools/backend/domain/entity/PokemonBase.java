@@ -1,7 +1,16 @@
 package com.pokechampionstools.backend.domain.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "pokemon_base")
@@ -27,6 +36,15 @@ public class PokemonBase {
 
     @Column(name = "type_2", length = 50)
     private String type2;
+
+    @Column(name = "ability_1", nullable = false, length = 50)
+    private String ability1;
+
+    @Column(name = "ability_2", length = 50)
+    private String ability2;
+
+    @Column(name = "hidden_ability", length = 50)
+    private String hiddenAbility;
 
     @Column(name = "base_hp", nullable = false)
     private Integer baseHp;

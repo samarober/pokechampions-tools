@@ -1,5 +1,7 @@
 package com.pokechampionstools.backend.domain.entity;
 
+import org.hibernate.annotations.Immutable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,7 +9,6 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Immutable;
 
 @Entity
 @Immutable
@@ -29,6 +30,15 @@ public class PokemonActive {
 
     @Column(name = "type_2")
     private String type2;
+
+    @Column(name = "ability_1")
+    private String ability1;
+
+    @Column(name = "ability_2")
+    private String ability2;
+
+    @Column(name = "hidden_ability")
+    private String hiddenAbility;
 
     @Column(name = "base_hp")
     private Integer baseHp;
